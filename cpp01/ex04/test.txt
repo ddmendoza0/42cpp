@@ -1,0 +1,5 @@
+Opens a file indicated by filename and returns a file stream associated with that file. mode is used to determine the file access mode.
+
+Parameters
+filename	-	file name to associate the file stream to
+mode	-	null-terminated character string determining file access mode
