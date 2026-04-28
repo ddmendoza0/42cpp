@@ -11,5 +11,5 @@ int main( void )
         std::cout << level_name[i] << " :\n";
         harl.complain( level_name[i] );
     }
-    return (1);
+    return (0);
 }
