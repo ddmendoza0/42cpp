@@ -56,6 +56,7 @@ int main(int argc, char *argv[])
     std::ofstream   f1(outputfile_n.c_str());
     if (!f1.is_open())
     {
+        f0.close();
         std::cerr << "ERROR: could not open file '" << outputfile_n << "'" << std::endl;
         return (r_val);
     }
