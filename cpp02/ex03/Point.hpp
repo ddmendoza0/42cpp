@@ -16,6 +16,9 @@ class	Point
 		Point(const Point& other);
 		~Point();
 
+		Fixed	getX( void ) const;
+		Fixed	getY( void ) const;
+
 };
 
 bool bsp( Point const a, Point const b, Point const c, Point const point);
