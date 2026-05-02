@@ -12,7 +12,8 @@ bool	bsp( Point const a, Point const b, Point const c, Point const point )
     Fixed   cross_bc = crossPoint(b, c, point);
     Fixed   cross_ca = crossPoint(c, a, point);
 
-    if (cross_ab <= 0 || cross_bc <= 0 || cross_ca <= 0)
-        return ( false );
-    return ( true );
+    bool allPositive = cross_ab > Fixed(0) && cross_bc > Fixed(0) && cross_ca > Fixed(0);
+    bool allNegative = cross_ab < Fixed(0) && cross_bc < Fixed(0) && cross_ca < Fixed(0);
+    
+    return ( allPositive || allNegative );
 }
