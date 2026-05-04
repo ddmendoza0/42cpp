@@ -8,9 +8,9 @@ class   ClapTrap
 {
     private:
         std::string _name;
-        int         _hp;
-        int         _ep;
-        int         _dmg;
+        unsigned int         _hp;
+        unsigned int         _ep;
+        unsigned int         _dmg;
 
     public:
         ClapTrap(std::string name);
