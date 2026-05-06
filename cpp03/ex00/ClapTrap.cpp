@@ -2,10 +2,13 @@
 
 ClapTrap::ClapTrap( std::string name) : _name(name), _hp(10), _ep(10), _dmg(0)
 {
-    std::cout << "ClapTrap " << _name << " is alive\n";
+    std::cout << "ClapTrap " << _name << " is created\n";
 }
 
-ClapTrap::ClapTrap( const ClapTrap& other ) : _name(other._name), _hp(other._hp), _ep(other._ep), _dmg(other._dmg) {}
+ClapTrap::ClapTrap( const ClapTrap& other ) : _name(other._name), _hp(other._hp), _ep(other._ep), _dmg(other._dmg) 
+{
+    std::cout << "ClapTrap " << _name << " is copied\n";
+}
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
@@ -15,6 +18,7 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
         _hp     = other._hp;
         _ep     = other._ep;
         _dmg    = other._dmg;
+        std::cout << "ClapTrap " << _name << " is assigned\n";
     }
     return (*this);
 }

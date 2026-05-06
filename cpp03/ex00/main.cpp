@@ -7,4 +7,8 @@ int main( void )
     cltp.attack("enemy of Sactuary");
     cltp.takeDamage(5);
     cltp.beRepaired(5);
+
+    cltp.takeDamage(10);
+    cltp.attack("new enemy of Sactuary");
+    cltp.beRepaired(5);
 }
