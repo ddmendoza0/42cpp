@@ -8,7 +8,7 @@ SRCS		= main.cpp \
 				ScavTrap.cpp
 
 HEADERS 	= ClapTrap.hpp \
-				ScavTrap.cpp
+				ScavTrap.hpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
