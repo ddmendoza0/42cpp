@@ -4,12 +4,12 @@
 Animal::Animal( void ) : type("Animal") 
 {
     std::cout << "Animal default constructor called\n";
-};
+}
 
 Animal::Animal( const Animal& other ) : type(other.type) 
 {
     std::cout << "Animal copy constructor called\n";
-};
+}
 
 Animal& Animal::operator=( const Animal& other )
 {

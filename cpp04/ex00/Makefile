@@ -6,11 +6,15 @@ CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 SRCS		= main.cpp \
 				Animal.cpp \
 				Cat.cpp \
-				Dog.cpp
+				Dog.cpp \
+				WrongAniaml.cpp \
+				WrongCat.cpp
 
 HEADERS 	= Animal.hpp \
 				Cat.hpp \
-				Dog.hpp
+				Dog.hpp \
+				WrongAnimal.hpp \
+				WrongCat.hpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
