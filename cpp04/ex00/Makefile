@@ -7,7 +7,7 @@ SRCS		= main.cpp \
 				Animal.cpp \
 				Cat.cpp \
 				Dog.cpp \
-				WrongAniaml.cpp \
+				WrongAnimal.cpp \
 				WrongCat.cpp
 
 HEADERS 	= Animal.hpp \
