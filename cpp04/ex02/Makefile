@@ -4,14 +4,14 @@ CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS		= main.cpp \
-				Animal.cpp \
+				AAnimal.cpp \
 				Cat.cpp \
 				Dog.cpp \
 				WrongAnimal.cpp \
 				WrongCat.cpp \
 				Brain.cpp
 
-HEADERS 	= Animal.hpp \
+HEADERS 	= AAnimal.hpp \
 				Cat.hpp \
 				Dog.hpp \
 				WrongAnimal.hpp \

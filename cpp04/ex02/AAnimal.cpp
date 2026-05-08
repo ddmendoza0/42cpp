@@ -1,4 +1,4 @@
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include <iostream>
 
 AAnimal::AAnimal( void ) : type("Animal") 
