@@ -3,26 +3,33 @@
 
 Dog::Dog( void ) : Animal()
 {
-    type = "Dog";
     std::cout << "Dog default constructor called\n";
+    type  = "Dog";
+    brain = new Brain();
 }
 
 Dog::Dog( const Dog& other ) : Animal(other)
 {
     std::cout << "Dog copy constructor called\n";
+    brain = new Brain(*other.brain);
 };
 
 Dog& Dog::operator=( const Dog& other )
 {
     std::cout << "Dog assigment operator called\n";
     if (this != &other)
+    {
         Animal::operator=(other);
+        delete brain;
+        brain = new Brain(*other.brain);
+    }
     return (*this);
 }
 
 Dog::~Dog( void )
 {
     std::cout << "Dog destructor called\n";
+    delete brain;
 }
 
 void Dog::makeSound( void ) const
