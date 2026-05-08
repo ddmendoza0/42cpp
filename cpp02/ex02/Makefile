@@ -1,4 +1,4 @@
-NAME		= fixed
+NAME		= fixed.exe
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
