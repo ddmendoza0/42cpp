@@ -7,9 +7,7 @@ SRCS		= main.cpp \
 				AAMateria.cpp \
 				Ice.cpp \
 				Cure.cpp \
-				ICharacter.cpp \
-				//WrongCat.cpp \
-				//Brain.cpp
+				ICharacter.cpp 
 
 HEADERS 	= AAMateria.hpp \
 				Ice.hpp \
