@@ -25,8 +25,3 @@ AAnimal::~AAnimal( void )
 }
 
 std::string AAnimal::getType( void ) const { return ( type ); }
-
-void AAnimal::makeSound( void ) const
-{
-    std::cout << "*muffled sound...*\n";
-}
