@@ -4,15 +4,19 @@ CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS		= main.cpp \
-				AAMateria.cpp \
+				AMateria.cpp \
 				Ice.cpp \
 				Cure.cpp \
-				ICharacter.cpp 
+				Character.cpp \
+				MateriaSource.cpp
 
-HEADERS 	= AAMateria.hpp \
+HEADERS 	= AMateria.hpp \
 				Ice.hpp \
 				Cure.hpp \
-				ICharacter.hpp
+				ICharacter.hpp \
+				Character.hpp \
+				IMateriaSource.hpp \
+				MateriaSource.hpp
 
 OBJS		= $(SRCS:.cpp=.o)
 

@@ -1,5 +1,5 @@
-#ifndef AAMATERIA_HPP
-# define AAMATERIA_HPP
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
 
 # include <string>
 # include "ICharacter.hpp"
