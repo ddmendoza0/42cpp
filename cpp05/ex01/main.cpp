@@ -38,5 +38,7 @@ int main( void )
     std::cout << fb << std::endl;
     std::cout << fc << std::endl;
     
+    bb.signForm(fc);
+
     return ( 0 );
 }
