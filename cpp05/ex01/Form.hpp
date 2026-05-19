@@ -3,7 +3,7 @@
 
 # include <string>
 # include <exception>
-# include <ostream>
+# include <iostream>
 class Bureaucrat;
 
 class Form
@@ -41,6 +41,6 @@ class Form
         };
 };
 
-std::ostream& operator<<(std::ostream& out, const Form& b);
+std::ostream& operator<<(std::ostream& out, const Form& f);
 
 #endif

@@ -1,32 +1,21 @@
 
 #include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main( void )
 {
-    Bureaucrat  a("Hermes", 26);
-    Bureaucrat  b("DIRECTOR", 1);
-    Bureaucrat  c("paperweight", 150);
+    Bureaucrat  ba("Hermes", 26);
+    Bureaucrat  bb("DIRECTOR", 1);
+    Bureaucrat  bc("paperweight", 150);
 
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
-    std::cout << c << std::endl;
+    std::cout << ba << std::endl;
+    std::cout << bb << std::endl;
+    std::cout << bc << std::endl;
 
-    a.incrementGrade();
-    std::cout << a << std::endl;
-
-    try
-    {
-        //all of these throw exceptions
-        Bureaucrat invalid("too high", 0);
-        Bureaucrat invalid("too low", 151);
-        b.incrementGrade();
-        c.decrementGrade();    
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << '\n';
-    }
+    Form    fa("Simple Form", 150, 150);
+    Form    fb("Interesting Form", 70, 60);
+    Form    fc("Bureaucrats Nightmare", 1, 2);
     
     return ( 0 );
 }
