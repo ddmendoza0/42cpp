@@ -1,12 +1,14 @@
-NAME		= Bureaucrat.exe
+NAME		= Bureaucracy.exe
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS		= main.cpp \
-				Bureaucrat.cpp
+				Bureaucrat.cpp \
+				Form.cpp
 
-HEADERS 	= Bureaucrat.hpp
+HEADERS 	= Bureaucrat.hpp \
+				Form.hpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
