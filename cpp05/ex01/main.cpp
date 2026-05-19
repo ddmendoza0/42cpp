@@ -16,6 +16,11 @@ int main( void )
     Form    fa("Simple Form", 150, 150);
     Form    fb("Interesting Form", 70, 60);
     Form    fc("Bureaucrats Nightmare", 1, 2);
+
+    std::cout << fa << std::endl;
+    std::cout << fb << std::endl;
+    std::cout << fc << std::endl;
+
     try
     {
         Form invalid("bad form", 0, 50);
@@ -28,6 +33,10 @@ int main( void )
     ba.signForm(fa);
     bc.signForm(fb);
     bb.signForm(fc);
+
+    std::cout << fa << std::endl;
+    std::cout << fb << std::endl;
+    std::cout << fc << std::endl;
     
     return ( 0 );
 }
