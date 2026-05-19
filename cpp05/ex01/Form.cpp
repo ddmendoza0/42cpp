@@ -2,7 +2,7 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form( const std::string& name, int gradeToSign, int gradeToExecute ) : _name(name), _gradeToSign(gradeToSign) ,_gradeToExecute(gradeToExecute), _signed(false)
+Form::Form( const std::string& name, int gradeToSign, int gradeToExecute ) : _name(name), _signed(false), _gradeToSign(gradeToSign) ,_gradeToExecute(gradeToExecute)
 {
     if (gradeToSign < 1 || gradeToExecute < 1)
         throw Form::GradeTooHighException();
@@ -10,7 +10,7 @@ Form::Form( const std::string& name, int gradeToSign, int gradeToExecute ) : _na
         throw Form::GradeTooLowException();
 }
 
-Form::Form( const Form& other ) : _name(other._name), _gradeToSign(other._gradeToSign) ,_gradeToExecute(other._gradeToExecute), _signed(other._signed) {}
+Form::Form( const Form& other ) : _name(other._name), _signed(other._signed), _gradeToSign(other._gradeToSign) ,_gradeToExecute(other._gradeToExecute) {}
 
 Form::~Form( void ) {}
 
