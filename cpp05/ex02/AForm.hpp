@@ -22,7 +22,7 @@ class AForm
     public:
         AForm(const std::string& name, int gradeToSign, int gradeToExecute);
         AForm(const AForm& other);
-        ~AForm();
+        virtual ~AForm();
 
         const std::string& getName(void) const;
         bool    getSigned(void) const;

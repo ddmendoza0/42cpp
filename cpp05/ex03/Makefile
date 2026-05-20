@@ -1,4 +1,4 @@
-NAME		= FormMaking.exe
+NAME		= Bureaucracy.exe
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
