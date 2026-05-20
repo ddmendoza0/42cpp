@@ -6,8 +6,7 @@ AMateria::AMateria( const AMateria&  other ) : _type(other._type) {}
 
 AMateria& AMateria::operator=( const AMateria& other )
 {
-    if (this != &other)
-        _type = other._type;
+    ( void )other;
     return ( *this );
 }
 
