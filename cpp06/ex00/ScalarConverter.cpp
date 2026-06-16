@@ -2,6 +2,9 @@
 
 bool    ScalarConverter::isValidLiteral(const std::string& literal)
 {
+    if (literal.empty())
+        return false;
+
     // check if char literal
     if ( literal.size() == 3 && literal[0] == '\'' && literal[2] == '\'' )
         return ( true );
@@ -14,7 +17,7 @@ bool    ScalarConverter::isValidLiteral(const std::string& literal)
     int i = 0;
     if (literal[i] == '+' || literal[i] == '-')
         i++;
-    for ( i; i < (int)literal.size(); i++ )
+    for ( ; i < (int)literal.size(); i++ )
     {
         if ( !isdigit( literal[i] ) )
             break ;
@@ -28,7 +31,7 @@ bool    ScalarConverter::isValidLiteral(const std::string& literal)
     i = 0;
     if (literal[i] == '+' || literal[i] == '-')
         i++;
-    for ( i; i < (int)literal.size(); i++ )
+    for ( ; i < (int)literal.size(); i++ )
     {
         if ( literal[i] == '.' && !maxDot )
         {
@@ -68,24 +71,38 @@ void ScalarConverter::convert( const std::string& literal )
         std::cout << "double: nan" << std::endl;
         return ;
     }
-    if (literal == "+inf" || literal == "-inf" || literal == "+inff" || literal == "-inff")
+
+    if (literal == "+inf" ||  literal == "+inff" )
     {
         std::cout << "char: impossible" << std::endl;
         std::cout << "int: impossible" << std::endl;
-        std::cout << "float: inff" << std::endl;
-        std::cout << "double: inf" << std::endl;
+        std::cout << "float: +inff" << std::endl;
+        std::cout << "double: +inf" << std::endl;
         return ;
     }
-
+    else if ( literal == "-inf" || literal == "-inff" )
+    {
+        std::cout << "char: impossible" << std::endl;
+        std::cout << "int: impossible" << std::endl;
+        std::cout << "float: -inff" << std::endl;
+        std::cout << "double: -inf" << std::endl;
+        return ;
+    }
+    
     double  value = parseToDouble( literal );
 
     //DISPLAYS + STATIC CAST
     // char
-    char c = static_cast<char>(value);
-    if (std::isprint(c))
-        std::cout << "char: '" << c << "'" << std::endl;
+    if (value < 0 || value > 127)
+        std::cout << "char: impossible" << std::endl;
     else
-        std::cout << "char: Non displayable" << std::endl;
+    {
+        char c = static_cast<char>(value);
+        if (std::isprint(c))
+            std::cout << "char: '" << c << "'" << std::endl;
+        else
+            std::cout << "char: Non displayable" << std::endl;
+    }
 
     // int
     if (value < std::numeric_limits<int>::min() || value > std::numeric_limits<int>::max())

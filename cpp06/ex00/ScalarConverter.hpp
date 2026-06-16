@@ -1,11 +1,11 @@
-#ifndef SCALARCONVERTER_HPP
-# define SCALARCONVERTER_HPP
+#pragma once
 
 # include <string>
 # include <cmath>
 # include <cctype>
 # include <limits>
 # include <iostream>
+# include <iomanip>
 
 class ScalarConverter
 {
@@ -15,13 +15,11 @@ class ScalarConverter
         ScalarConverter& operator=(const ScalarConverter& other);
         ~ScalarConverter(void);
 
-        bool    isValidLiteral(const std::string& literal);
-        double  parseToDouble(const std::string& literal);
+        static bool    isValidLiteral(const std::string& literal);
+        static double  parseToDouble(const std::string& literal);
 
 
     public:
         static void convert(const std::string& literal);
 
 };
-
-#endif
