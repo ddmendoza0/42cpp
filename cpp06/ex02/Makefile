@@ -1,12 +1,18 @@
-NAME		= Bureaucrat.exe
+NAME		= Converter.exe
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS		= main.cpp \
-				Bureaucrat.cpp
+				Base.cpp\
+				A.cpp \
+				B.cpp \
+				C.cpp
 
-HEADERS 	= Bureaucrat.hpp
+HEADERS 	= Base.hpp \
+				A.hpp \
+				B.hpp \
+				C.hpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
