@@ -38,5 +38,5 @@ int main( void )
     }
     ::iter(names, 3, greet);
 
-    return ( 1 );
+    return ( 0 );
 }
