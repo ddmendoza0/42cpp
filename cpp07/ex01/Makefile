@@ -1,10 +1,9 @@
-NAME		= Functions.exe
+NAME		= Iter.exe
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= main.cpp \
-				iter.cpp
+SRCS		= main.cpp
 
 HEADERS 	= iter.hpp 
 
