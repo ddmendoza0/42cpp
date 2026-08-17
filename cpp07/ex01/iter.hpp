@@ -1,7 +1,7 @@
 #pragma once
 
-template <typename T>
-void    iter( T* p, const int n, void (*f)(T&) )
+template <typename T, typename F>
+void    iter( T* p, const int n, F f )
 {
     for ( int i = 0; i < n; i++)
         f(p[i]);
