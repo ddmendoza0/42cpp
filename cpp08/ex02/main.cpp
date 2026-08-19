@@ -29,7 +29,7 @@ int main( void )
     std::stack<int> s(mstack);
 
     /*LIST VERSION*/
-    std::cout << "List version: " << std::endl;
+    std::cout << "\nList version: " << std::endl;
     std::list<int> mstack2;
     mstack2.push_back(5);
     mstack2.push_back(17);
