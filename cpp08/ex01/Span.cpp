@@ -52,12 +52,6 @@ unsigned int Span::longestSpan( void )
     return ( max - min );
 }
 
-void Span::addRange( void )
-{
-    for ( unsigned int i = 0; i < _n; i++ )
-        _v.push_back( std::rand() );
-}
-
 const char*  Span::FullContainer::what() const throw()
 {
     return ( "Container is full" );

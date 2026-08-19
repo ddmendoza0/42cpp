@@ -2,6 +2,13 @@
 #include <iostream>
 #include <ctime>
 
+void fill_vector( std::vector<int>& v, unsigned int n )
+{
+    for ( unsigned int i = 0; i < n; i++ )
+        v.push_back( std::rand() );
+}
+
+
 int main( void )
 {
     std::srand(std::time(NULL));
@@ -23,7 +30,7 @@ int main( void )
     Span ex_sp(3);
     ex_sp.addNumber(6);
 
-    std::cout << "shortestSpan call: ";
+    std::cout << "  - shortestSpan call: ";
     try 
     {
         std::cout << ex_sp.shortestSpan() << std::endl;
@@ -33,7 +40,7 @@ int main( void )
         std::cerr << e.what() << std::endl;
     }
 
-    std::cout << "longestSpan  call: ";
+    std::cout << "  - longestSpan  call: ";
     try 
     {
         std::cout << ex_sp.longestSpan() << std::endl;
@@ -43,7 +50,7 @@ int main( void )
         std::cerr << e.what() << std::endl;
     }
 
-    std::cout << "Adding a number when full: ";
+    std::cout << "  - Adding a number when full: ";
     ex_sp.addNumber(6);
     ex_sp.addNumber(6);
     try 
@@ -54,15 +61,23 @@ int main( void )
     {
         std::cerr << e.what() << std::endl;
     }
-    
 
     /*ADD RANGE*/
-    std::cout << "add_range test: " << std::endl;
-    Span new_sp = Span(30000);
-    new_sp.addRange();
+    std::cout << "Add range method: ";
+    Span range_sp = Span(20);
+    std::vector<int> source;
+    for (int i = 1; i <= 10; i++)
+        source.push_back(i);
+    range_sp.addRange(source.begin(), source.end());
+    std::cout << range_sp.shortestSpan() << ", " << range_sp.longestSpan() << std::endl;
 
-    std::cout << new_sp.shortestSpan() << std::endl;
-    std::cout << new_sp.longestSpan() << std::endl;
+    /*STRESS TEST*/
+    std::cout << "20.000 numbers: ";
+    Span big_sp = Span(20000);
+    source.clear();
+    fill_vector(source, 20000);
+    big_sp.addRange(source.begin(), source.end());
+    std::cout << big_sp.shortestSpan() << ", " << big_sp.longestSpan() << std::endl;
 
     return ( 0 );
 }

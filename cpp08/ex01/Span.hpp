@@ -1,7 +1,6 @@
 #pragma once
 
 #include <vector>
-#include <cstdlib>
 #include <algorithm>
 #include <exception>
 
@@ -20,7 +19,8 @@ class Span
         void            addNumber(int n);
         unsigned int    shortestSpan(void);
         unsigned int    longestSpan(void);
-        void            addRange(void);
+        template <typename Iterator>
+        void            addRange(Iterator begin, Iterator end);
 
         class FullContainer : public std::exception
         {
@@ -35,3 +35,11 @@ class Span
         };
 
 };
+
+template <typename Iterator>
+void Span::addRange( Iterator begin, Iterator end )
+{
+    if ( std::distance(begin, end) + _v.size() > _n )
+        throw Span::FullContainer();
+    _v.insert( _v.end(), begin, end );
+}
