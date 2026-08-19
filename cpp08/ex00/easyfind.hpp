@@ -1,11 +1,13 @@
 #pragma once
 
 #include <algorithm>
+#include <exception>
 
 template <typename T>
 typename T::iterator easyfind( T& container, int n )
 {
-    if ( std::find( container.begin(), container.end(), n) == container.end() )
+    typename T::iterator it = std::find( container.begin(), container.end(), n);
+    if (  it == container.end() )
         throw std::exception();
-    return (std::find( container.begin(), container.end(), n));
+    return ( it );
 }

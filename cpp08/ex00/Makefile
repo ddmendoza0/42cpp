@@ -1,11 +1,11 @@
-NAME		= Functions.exe
+NAME		= easyfind.exe
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 SRCS		= main.cpp
 
-HEADERS 	= whatever.hpp 
+HEADERS 	= easyfind.hpp 
 
 OBJS		= $(SRCS:.cpp=.o)
 
