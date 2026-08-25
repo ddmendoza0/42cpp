@@ -1,11 +1,12 @@
-NAME		= easyfind.exe
+NAME		= btc.exe
 
 CXX			= c++
 CXXFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= main.cpp
+SRCS		= main.cpp \
+				BitcoinExchange.cpp
 
-HEADERS 	= easyfind.hpp 
+HEADERS 	= BitcoinExchange.hpp
 
 OBJS		= $(SRCS:.cpp=.o)
 
