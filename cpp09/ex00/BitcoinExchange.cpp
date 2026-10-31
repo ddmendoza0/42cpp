@@ -4,9 +4,7 @@ BitcoinExchange::BitcoinExchange( void )
 {
     std::ifstream file("data.csv");
     if ( !file.is_open() )
-    {
-        std::cerr << "Error: Could not open db." << std::endl;
-    }
+        throw std::runtime_error("Error: could not open db.");
 
     std::string line;
     std::getline( file, line );

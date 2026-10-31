@@ -14,8 +14,16 @@ int main( int argc, char *argv[] )
         return ( 1 );
     }
 
-    BitcoinExchange btc;
-    btc.process(argv[1]);
+    try
+    {
+        BitcoinExchange btc;
+        btc.process(argv[1]);
+    }
+    catch ( const std::exception& e )
+    {
+        std::cerr << e.what() << std::endl;
+        return ( 1 );
+    }
 
     return ( 0 );
 }
