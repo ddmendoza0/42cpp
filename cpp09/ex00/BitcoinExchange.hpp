@@ -1,4 +1,5 @@
 #pragma once
+#include <stdexcept>
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
@@ -10,8 +11,9 @@ class BitcoinExchange
     private:
         std::map<std::string, float>    _data;
 
-        bool validateDate(const std::string& date);
-        bool validateValue(float value);
+        bool isValidDate(const std::string& date) const;
+        bool isValidValue(float value) const;
+        bool isValidNumber( const std::string& s ) const;
 
     public:
         BitcoinExchange(void);
