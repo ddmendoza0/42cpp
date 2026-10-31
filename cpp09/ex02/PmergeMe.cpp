@@ -116,12 +116,6 @@ void PmergeMe::sortVector( void )
             break;
     }
 
-    for ( int j = (int)pend.size() - 1; j >= prev; j-- )
-    {
-        std::vector<int>::iterator pos = std::lower_bound(main.begin(), main.end(), pend[j]);
-        main.insert(pos, pend[j]);
-    }
-
     if ( hasLeftover )
     {
         std::vector<int>::iterator pos = std::lower_bound(main.begin(), main.end(), leftover);
@@ -184,12 +178,6 @@ void PmergeMe::sortDeque( void )
         prev = curr;
         if ( prev >= (int)pend.size() )
             break;
-    }
-
-    for ( int j = (int)pend.size() - 1; j >= prev; j-- )
-    {
-        std::deque<int>::iterator pos = std::lower_bound(main.begin(), main.end(), pend[j]);
-        main.insert(pos, pend[j]);
     }
 
     if ( hasLeftover )
