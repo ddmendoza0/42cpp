@@ -15,7 +15,7 @@ int main( int argc, char *argv[] )
         int result = rpn.evaluate(argv[1]);
         std::cout << result << std::endl;
     }
-    catch ( std::exception& e )
+    catch ( const std::exception& e )
     {
         std::cerr << e.what() << std::endl;
         return ( 1 );

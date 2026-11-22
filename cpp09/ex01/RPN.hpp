@@ -1,8 +1,11 @@
 #pragma once
+
 #include <string>
 #include <stack>
 #include <sstream>
 #include <cstdlib>
+#include <cctype>
+#include <stdexcept>
 
 class RPN
 {

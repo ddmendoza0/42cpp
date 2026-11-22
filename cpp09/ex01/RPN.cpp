@@ -15,11 +15,14 @@ RPN::~RPN(void) {}
 
 int RPN::evaluate( const std::string& expression )
 {
+
+    _stack = std::stack<int>();
+
     std::istringstream iss(expression);
     std::string token;
     while (iss >> token)
     {
-        if ( std::isdigit(token[0]) )
+        if ( std::isdigit(token[0]) && token.size() == 1)
             _stack.push(atoi(token.c_str()));
         else if ( token == "+" || token == "-" || token == "/" || token == "*" )
         {
@@ -37,7 +40,7 @@ int RPN::evaluate( const std::string& expression )
             else if ( token == "/" )
             {
                 if ( b == 0 )
-                throw std::runtime_error("Error");
+                    throw std::runtime_error("Error");
                 _stack.push(a / b);
             }
             else if ( token == "*" )
